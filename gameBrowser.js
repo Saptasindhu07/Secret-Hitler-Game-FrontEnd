@@ -1,6 +1,6 @@
 
 
-const socket = io('http://192.168.0.103:8080',{secure: false})
+const socket = io('http://192.168.0.103:8080')
 let playerIdentity
 let playerRole
 let playerListsLists=[]
