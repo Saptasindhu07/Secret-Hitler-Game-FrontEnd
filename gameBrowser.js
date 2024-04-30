@@ -1,6 +1,6 @@
 
 
-const socket = io('http://192.168.0.103:8000')
+const socket = io('wss://prickle-bloom-fiber.glitch.me/')
 let playerIdentity
 let playerRole
 let playerListsLists=[]
@@ -132,6 +132,9 @@ socket.on("LoadGame",(playerList,playerListsList)=>{
     }
 })
 socket.on("StartGame",(roundCount_,score1,score2)=>{
+    socket.on("disconnect_",()=>{
+        socket.disconnect()
+    })
     currentChancellor=""
     
     document.getElementById("liberalboxscore").textContent=score1
